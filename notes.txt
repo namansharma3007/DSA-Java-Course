@@ -1,0 +1,10 @@
+a) Binary Number
+    Mostly sorted array 
+    Square root 
+
+    #IMP
+    /* Ceiling of a no */
+    When we need to return the no greater than or equal to the given no. The greater no should also be present in the list. Just return start in place of -1.
+
+    /* Floor of a no */
+    Would be same as the above one just return end in place of -1.
