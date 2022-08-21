@@ -1,6 +1,6 @@
 a) Binary Number
-    Mostly sorted array 
-    Square root 
+    Mostly sorted array
+    Square root
 
     #IMP
     /* Ceiling of a no */
