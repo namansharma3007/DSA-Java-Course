@@ -1,0 +1,140 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Launch Array_List",
+            "request": "launch",
+            "mainClass": "Array_List",
+            "projectName": "DSA Java_96adb5ca"
+        },
+        {
+            "type": "java",
+            "name": "Launch Binary_search",
+            "request": "launch",
+            "mainClass": "Binary_search",
+            "projectName": "DSA Java_96adb5ca"
+        },
+        {
+            "type": "java",
+            "name": "Launch BubbleSort",
+            "request": "launch",
+            "mainClass": "BubbleSort",
+            "projectName": "DSA Java_96adb5ca"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ceiling_floor_BS",
+            "request": "launch",
+            "mainClass": "Ceiling_floor_BS",
+            "projectName": "DSA Java_96adb5ca"
+        },
+        {
+            "type": "java",
+            "name": "Launch Linear_search",
+            "request": "launch",
+            "mainClass": "Linear_search",
+            "projectName": "DSA Java_96adb5ca"
+        },
+        {
+            "type": "java",
+            "name": "Launch Linked_List",
+            "request": "launch",
+            "mainClass": "Linked_List",
+            "projectName": "DSA Java_96adb5ca"
+        },
+        {
+            "type": "java",
+            "name": "Launch RowColMatrix",
+            "request": "launch",
+            "mainClass": "RowColMatrix",
+            "projectName": "DSA Java_96adb5ca"
+        },
+        {
+            "type": "java",
+            "name": "Launch SearchInMountain",
+            "request": "launch",
+            "mainClass": "SearchInMountain",
+            "projectName": "DSA Java_96adb5ca"
+        },
+        {
+            "type": "java",
+            "name": "Launch SortedMatrix",
+            "request": "launch",
+            "mainClass": "SortedMatrix",
+            "projectName": "DSA Java_96adb5ca"
+        },
+        {
+            "type": "java",
+            "name": "Launch SplitArrayLargestSum",
+            "request": "launch",
+            "mainClass": "SplitArrayLargestSum",
+            "projectName": "DSA Java_96adb5ca"
+        },
+        {
+            "type": "java",
+            "name": "Launch infinitArray_BS",
+            "request": "launch",
+            "mainClass": "infinitArray_BS",
+            "projectName": "DSA Java_96adb5ca"
+        },
+        {
+            "type": "java",
+            "name": "Launch max",
+            "request": "launch",
+            "mainClass": "max",
+            "projectName": "DSA Java_96adb5ca"
+        },
+        {
+            "type": "java",
+            "name": "Launch mountainArray",
+            "request": "launch",
+            "mainClass": "mountainArray",
+            "projectName": "DSA Java_96adb5ca"
+        },
+        {
+            "type": "java",
+            "name": "Launch prime_no",
+            "request": "launch",
+            "mainClass": "prime_no",
+            "projectName": "DSA Java_96adb5ca"
+        },
+        {
+            "type": "java",
+            "name": "Launch rotatedBS",
+            "request": "launch",
+            "mainClass": "rotatedBS",
+            "projectName": "DSA Java_96adb5ca"
+        },
+        {
+            "type": "java",
+            "name": "Launch rotationCount",
+            "request": "launch",
+            "mainClass": "rotationCount",
+            "projectName": "DSA Java_96adb5ca"
+        },
+        {
+            "type": "java",
+            "name": "Launch searchingIn2DArray",
+            "request": "launch",
+            "mainClass": "searchingIn2DArray",
+            "projectName": "DSA Java_96adb5ca"
+        },
+        {
+            "type": "java",
+            "name": "Launch swap",
+            "request": "launch",
+            "mainClass": "swap",
+            "projectName": "DSA Java_96adb5ca"
+        }
+    ]
+}
