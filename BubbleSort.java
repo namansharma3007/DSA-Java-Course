@@ -20,7 +20,7 @@ public class BubbleSort {
             // for each step, max item will come at the last respective index
             for (int j = 1; j < arr.length - i; j++) {
                 // swap if the item is smalller than the previous item
-                if(arr[j] < arr[j-1]){
+                if(arr[j] < arr[j-1]) {
                     // swap
                     int temp = arr[j];
                     arr[j] = arr[j-1];
