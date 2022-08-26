@@ -12,7 +12,7 @@ public class SelectionSort {
             // find the maximum item in the remaining array ans swap with the correct index
             int last = arr.length - i - 1;
             int maxIndex = getMaxIndex(arr,0,last);
-            swap(arr, maxIndex, last);
+           swap(arr, maxIndex, last);
         }
     }
 
