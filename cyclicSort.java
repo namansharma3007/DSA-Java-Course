@@ -19,6 +19,7 @@ public class cyclicSort {
             } else{
                 i++;
             }
+            // just add a search statement according to questions need: normally a for loop will be used
             
         }
     }
