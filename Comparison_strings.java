@@ -1,7 +1,7 @@
 // Strings 
 // only for value use .equals() method
 
-public class Comparison {
+public class Comparison_strings {
     public static void main(String[] args) {
         String a = "Naman";
         String b = "Naman";
