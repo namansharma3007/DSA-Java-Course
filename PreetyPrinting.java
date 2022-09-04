@@ -11,6 +11,10 @@ public class PreetyPrinting {
 
 
         System.out.printf("My name is %s and I study at %s.","Naman","Lovely Professional University");
+         
+        System.out.println();
+
+        System.out.println((char)('a'+4));
 
     }
 }
