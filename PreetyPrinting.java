@@ -26,5 +26,8 @@ public class PreetyPrinting {
 
         System.out.println("Naman" + new ArrayList<>());
         // output Naman[]
+
+        System.out.println(new Integer(63) + "" + new ArrayList<>());
+        // without this "" it will not work
     }
 }
