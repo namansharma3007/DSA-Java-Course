@@ -4,7 +4,7 @@ public class palindromeStrings {
         System.out.println(palindrome(str));
     }
     static boolean palindrome(String str){
-        if(str.length() == 0){
+        if(str == null || str.length() == 0){
             return true;
         }
         str = str.toLowerCase();
