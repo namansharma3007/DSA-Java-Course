@@ -21,3 +21,8 @@ b) Format a string
     %x - Hexadecimal number (base 16)
     %t - Date/time
     %n - Newline
+
+c) Patterns
+    Step 1 - run outer for loop for the no of lines
+    Step 2 - how may columns are there with each row 
+    Step 3 - what do you need to print
