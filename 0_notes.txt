@@ -23,6 +23,7 @@ b) Format a string
     %n - Newline
 
 c) Patterns
+    # if you are given numbers try not to use 0 as inintial value in loop => use "i=1"
     Step 1 - run outer for loop for the no of lines
     Step 2 - how may columns are there with each row 
     Step 3 - what do you need to print
