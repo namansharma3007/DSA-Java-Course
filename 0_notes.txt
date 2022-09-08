@@ -27,3 +27,6 @@ c) Patterns
     Step 1 - run outer for loop for the no of lines
     Step 2 - how may columns are there with each row 
     Step 3 - what do you need to print
+
+d) Cyclic Sort
+    - use one its given like [1,n] or [0,n] => It got to be continuous
