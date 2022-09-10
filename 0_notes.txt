@@ -30,3 +30,8 @@ c) Patterns
 
 d) Cyclic Sort
     - use one its given like [1,n] or [0,n] => It got to be continuous
+
+e) Recursion
+    - It helps us in solving bigger/complex problems in a simple way
+    - You can conert recursion solution into iteration & vice versa
+    - DEMERIT - Space complexity is not constant because of resursive calls
