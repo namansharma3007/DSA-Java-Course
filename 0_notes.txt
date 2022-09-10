@@ -35,3 +35,4 @@ e) Recursion
     - It helps us in solving bigger/complex problems in a simple way
     - You can conert recursion solution into iteration & vice versa
     - DEMERIT - Space complexity is not constant because of resursive calls
+    - It helps us breaking bigger problems into smaller problems
