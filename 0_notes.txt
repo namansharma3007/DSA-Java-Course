@@ -36,3 +36,16 @@ e) Recursion
     - You can conert recursion solution into iteration & vice versa
     - DEMERIT - Space complexity is not constant because of resursive calls
     - It helps us breaking bigger problems into smaller problems
+
+    Need To Remember While Solving problems:
+    - Identify if you can break down problem into smaller problem
+    - Writedown the recurrence relation if needed
+    - Draw the recursive tree
+    => About the Tree:
+        - See the flo of function, how they are getting in stack
+        - Identify and focus on left tree calls and right tree calls
+        - Draw the tree and pointer again and again using pen and paper
+        - Use a debugger to see the flow
+    
+    - See how the values are returned at each Step
+    - See where the function call will come out, In teh edn you will come out of the main function
