@@ -13,6 +13,8 @@ public class Recursion {
             return;
         }
         System.out.println(n);
+        // this is tail recursion
+        // this is the last function call
         printNo(n+1);
     }
     // recurrence relation
