@@ -47,5 +47,16 @@ e) Recursion
         - Draw the tree and pointer again and again using pen and paper
         - Use a debugger to see the flow
     
-    - See how the values are returned at each Step
+    - See how the values and what values are returned at each Step
     - See where the function call will come out, In the end you will come out of the main function
+    - Do a lot of questions
+
+    - Variables : Arguments; Return Type; Body of function
+
+
+    -> Types of recurrence relation:
+        - Linear reccurence relation - eg - fibonacci nos
+        - Divide & conquer reccurence relation
+
+    -> Do not over-think
+    -> Make sure to return the result of a function call of the return type
