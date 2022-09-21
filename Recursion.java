@@ -13,9 +13,9 @@ public class Recursion {
             return;
         }
         System.out.println(n);
+        // if you are calling a function again and again, you can treat it as a separate call
         // this is tail recursion
         // this is the last function call
-        // if you are calling a function again and again, you can treat it as a separate call
         printNo(n+1);
     }
     // recurrence relation
