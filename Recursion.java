@@ -23,6 +23,7 @@ public class Recursion {
         if(n < 2) {
             return n;
         }
+        // this is not tail recursion because it is adding and returning value
         return fibonacci(n-1) + fibonacci(n-2);
     }
 } 
