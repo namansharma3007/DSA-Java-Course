@@ -48,4 +48,4 @@ e) Recursion
         - Use a debugger to see the flow
     
     - See how the values are returned at each Step
-    - See where the function call will come out, In teh edn you will come out of the main function
+    - See where the function call will come out, In the end you will come out of the main function
