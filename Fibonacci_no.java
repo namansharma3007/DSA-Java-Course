@@ -20,5 +20,6 @@ public class Fibonacci_no {
         //     System.out.println(fiboFormula(i));
         // }
         System.out.println(fiboFormula(50));
+
     }
 }
