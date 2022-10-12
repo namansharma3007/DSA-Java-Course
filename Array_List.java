@@ -37,6 +37,7 @@ public class Array_List {
             
         }
         System.out.println(list);
+        sc.close();
 
     }
 }
