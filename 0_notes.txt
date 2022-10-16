@@ -64,3 +64,4 @@ e) Recursion
 
     -> Sometimes you might need some additional variables in the Arguments
         -> In that case, make another function
+        -> base condition should return what is the main need of the main function . "Like eg - count"
