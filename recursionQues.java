@@ -10,8 +10,9 @@ public class recursionQues {
         // reverseNo(345);
         // System.out.println(sum);
         // System.out.println(rev2(7684));
-        System.out.println(palindrome(564));
+        // System.out.println(palindrome(564));
         
+        System.out.println(countZeroes(10010));
     }
     static void func(int n){
         if(n == 0){
@@ -90,5 +91,20 @@ public class recursionQues {
 
     static boolean palindrome(int n){
         return n == rev2(n);
+    }
+
+    static int countZeroes(int n){
+        return helper2(n,0);
+    }
+
+    // how to pass a value to above calls
+    private static int helper2(int n,int count){
+        if(n == 0){
+            return count;
+        }
+        if(n%10 == 0){
+            return helper2(n/10,count+1);
+        }
+        return helper2(n/10, count);
     }
 }
