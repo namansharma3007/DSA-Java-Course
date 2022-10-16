@@ -60,3 +60,7 @@ e) Recursion
 
     -> Do not over-think
     -> Make sure to return the result of a function call of the return type
+
+
+    -> Sometimes you might need some additional variables in the Arguments
+        -> In that case, make another function
