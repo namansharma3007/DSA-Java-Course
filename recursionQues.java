@@ -12,7 +12,9 @@ public class recursionQues {
         // System.out.println(rev2(7684));
         // System.out.println(palindrome(564));
         
-        System.out.println(countZeroes(10010));
+        // System.out.println(countZeroes(10010));
+        int [] arr = {1,2,3,5,6,8,4};
+        System.out.println(checkIfSorted(arr));
     }
     static void func(int n){
         if(n == 0){
@@ -106,5 +108,18 @@ public class recursionQues {
             return helper2(n/10,count+1);
         }
         return helper2(n/10, count);
+    }
+
+
+    // find if array is sorted or not
+    static boolean checkIfSorted(int [] arr){
+        if(arr.length == 1) return true;
+        return helperSorted(arr,1);
+    }
+
+    static boolean helperSorted(int [] arr, int index){
+        if(index == arr.length) return true;
+
+        return (arr[index] > arr[index-1] && helperSorted(arr, index+1));
     }
 }
