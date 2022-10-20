@@ -56,5 +56,4 @@ public class recursionPatterns {
             System.out.println();
         }
     }
-    
 }
