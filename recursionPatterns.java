@@ -26,9 +26,6 @@ public class recursionPatterns {
 
     // OR
 
-    
-
-
     static void starPattern2(int row, int col){
         if(row == 0){
             return;
