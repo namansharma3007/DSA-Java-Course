@@ -3,7 +3,7 @@ import java.util.Arrays;
 public class mergeSort {
     // divide array into two parts then get both the parts sorted then merge both
     public static void main(String[] args) {
-        int [] arr = {5,4,3,2,1};
+        int [] arr = {2,2,3,1};
         // arr = mSort(arr);
         // int [] ans = mSort(arr); // Now, try printing original array, it would not have been modified
         // System.out.println(Arrays.toString(arr));
@@ -78,7 +78,7 @@ public class mergeSort {
 
         while(i < mid && j < end){
             if(arr[i] < arr[j]){
-                mix[k] = arr[k];
+                mix[k] = arr[i];
                 i++;
             } else {
                 mix[k] = arr[j];
