@@ -65,3 +65,12 @@ e) Recursion
     -> Sometimes you might need some additional variables in the Arguments
         -> In that case, make another function
         -> base condition should return what is the main need of the main function . "Like eg - count"
+
+
+f) Quick Sort:
+    -> Not stable ()
+    -> In-place: why preferred for arrays instead of  Merge Sort. Merge Sort takes O(N) extra space complexity
+    -> Merge Sort is better  in linked list due to memory allocation -> not continuous
+
+g) Insertion Sort:
+    -> Works really well with internal sorting algorithm
