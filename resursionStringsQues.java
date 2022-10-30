@@ -3,8 +3,12 @@ public class resursionStringsQues {
         String str = "bacceaad";
         // System.out.println(removeA(str));
         // skip("", str);
-        System.out.println(skipR(str));
+        // System.out.println(skipR(str));
+        String str2 = "rendeapplezvous";
+        System.out.println(skipApple(str2));
         
+        
+
     }
     // create another string that has removed all the other strings inside it
    static String removeA(String str){
@@ -52,6 +56,19 @@ public class resursionStringsQues {
             return skipR(up.substring(1));
         } 
             return ch + skipR(up.substring(1));
+        
+   }
+
+   static String skipApple(String up){
+        if(up.isEmpty()){
+            return "";
+        }
+
+
+        if(up.startsWith("apple")){
+            return skipApple(up.substring(5));
+        } 
+            return up.charAt(0) + skipApple(up.substring(1));
         
    }
 }
