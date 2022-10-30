@@ -4,7 +4,10 @@ public class quickSortAlgo {
     // pivot: after first pass all the elements < pivot will be on th e LHS of pivot and elements > pivot will be on the RHS of pivot
     public static void main(String[] args) {
         int [] arr = {9,8,7,6,5,4};
-        quickSort(arr,0,arr.length-1);
+        // quickSort(arr,0,arr.length-1);
+        // System.out.println(Arrays.toString(arr));
+
+        Arrays.sort(arr);
         System.out.println(Arrays.toString(arr));
 
     }
