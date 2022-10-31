@@ -79,3 +79,4 @@ g) Insertion Sort:
 h) Subsets:
     -> when ever you are dealing with permutations and combinations
     -> subsets: non-adjacent collection
+    -> Taking some elements and removing some elements
