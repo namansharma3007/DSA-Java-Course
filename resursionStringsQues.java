@@ -5,7 +5,8 @@ public class resursionStringsQues {
         // skip("", str);
         // System.out.println(skipR(str));
         String str2 = "rendeapplezvous";
-        System.out.println(skipApple(str2));
+        // System.out.println(skipApple(str2));
+        System.out.println(skipAppNotApple(str2));
         
         
 
@@ -69,6 +70,19 @@ public class resursionStringsQues {
             return skipApple(up.substring(5));
         } 
             return up.charAt(0) + skipApple(up.substring(1));
+        
+   }
+
+   static String skipAppNotApple(String up){
+        if(up.isEmpty()){
+            return "";
+        }
+
+
+        if(up.startsWith("app") && !up.startsWith("apple")){
+            return skipAppNotApple(up.substring(3));
+        } 
+            return up.charAt(0) + skipAppNotApple(up.substring(1));
         
    }
 }

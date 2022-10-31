@@ -74,3 +74,8 @@ f) Quick Sort:
 
 g) Insertion Sort:
     -> Works really well with internal sorting algorithm
+
+
+h) Subsets:
+    -> when ever you are dealing with permutations and combinations
+    -> subsets: non-adjacent collection
