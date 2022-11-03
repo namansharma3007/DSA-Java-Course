@@ -4,7 +4,8 @@ public class phonepattern {
     public static void main(String[] args) {
         // pad("","12");
         ArrayList<String> ans = padRet("","12");
-        System.out.println(ans);
+        // System.out.println(ans);
+        System.out.println(padCount("","12"));
     }
 
     static void pad(String p, String up){
@@ -40,5 +41,21 @@ public class phonepattern {
         }
 
         return ans;
+    }
+
+    static int padCount(String p, String up){
+        if(up.isEmpty()){
+            return 1;
+        }
+        int count = 0;
+        int digit = up.charAt(0) - '0'; // this will convert '2' into 2
+
+        for (int i = (digit - 1) * 3; i < digit * 3; i++) {
+            char ch = (char)('a' + i);
+
+            count = count + padCount(p + ch, up.substring(1));
+        }
+
+        return count;
     }
 }
