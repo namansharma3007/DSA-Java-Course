@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class backTracking {
+public class mazeProblem {
     public static void main(String[] args) {
         // System.out.println(count(3,3));
 
@@ -8,7 +8,15 @@ public class backTracking {
         // ArrayList<String> result = pathRet("",3,3);
         // System.out.println(result);
 
-        System.out.println(pathDiagonalRet("", 3,3));
+        // System.out.println(pathDiagonalRet("", 3,3));
+
+        boolean [][] maze = {
+                        {true,true,true},
+                        {true,false,true},
+                        {true,true,true}
+                        };
+        pathObstacles("", maze, 0, 0);
+
     }
 
     static int count(int r, int c){
@@ -78,5 +86,25 @@ public class backTracking {
         }
 
         return ans;
+    }
+
+
+    static void pathObstacles(String p,boolean [][] maze, int row, int col){
+        if(row == maze.length - 1 && col == maze[0].length - 1){
+            System.out.println(p);
+            return;
+        }
+
+        if(!maze[row][col]){
+            return;
+        }
+
+        if(row < maze.length - 1){
+            pathObstacles(p + "D",maze, row+1, col);
+        }
+
+        if(col < maze[0].length - 1){
+            pathObstacles(p + "R",maze,  row, col+1);
+        }
     }
 }
