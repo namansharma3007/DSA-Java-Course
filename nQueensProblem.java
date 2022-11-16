@@ -1,6 +1,9 @@
+// space complexity  O(n*n)
+// time comlpexity
+
 public class nQueensProblem {
     public static void main(String[] args) {
-        int n = 6;
+        int n = 3;
 
         boolean[][] board = new boolean[n][n];
         System.out.println(queens(board, 0));
@@ -53,7 +56,6 @@ public class nQueensProblem {
                 return false;
             }
         }
- 
 
         return true;
     }
