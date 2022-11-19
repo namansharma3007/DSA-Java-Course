@@ -80,3 +80,6 @@ h) Subsets:
     -> when ever you are dealing with permutations and combinations
     -> subsets: non-adjacent collection
     -> Taking some elements and removing some elements
+
+i) BackTracking:
+    -> When a chopice can affect future answers use backtracking
