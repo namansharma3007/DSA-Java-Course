@@ -22,8 +22,8 @@ public class mainOops {
     }
 
     class Student{
-        int [] rollno = new int[5];
+        int [] rollno = new int [5];
         String[] name = new String [5];
-        float[] marks = new float[5];
+        float[] marks = new float [5];
     }
 }
