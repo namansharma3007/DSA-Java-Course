@@ -1,0 +1,2 @@
+class:
+    -> is names group of properties and functions
