@@ -1,6 +1,7 @@
+import java.util.Arrays;
+
 // package OOPS;
 // create own datatype using class
-
 
 public class mainOops {
     public static void main(String[] args) {
@@ -16,14 +17,66 @@ public class mainOops {
         String[] name = new String [5];
         float[] marks = new float[5];
 
-        Student[] students = new Student[5];
+        Student[] students;
+        students = new Student[5]; // dynamically allocates memory & returns a reference to it and this reference is stored in variable;
 
-        Student naman;
+        Student naman = new Student(21, "Vijyant rana", 78.f);
+
+        // naman.rollno = 4;
+        // naman.name = "Naman Sharma";
+        // naman.marks = 45.5f;
+
+        // naman.changeName("Rahul");
+        // naman.greeting();
+
+        // System.out.println(naman.rollno);
+        // System.out.println(naman.name);
+        // System.out.println(naman.marks);
+
+
+        Student random = new Student(naman);
+        System.out.println(random.name);
+    }
+}
+
+//create a class
+// for every single student
+class Student{
+    int rollno;
+    String name;
+    float marks = 90.7f;
+
+    void greeting(){
+        System.out.println("Good Morning..." + this.name);
     }
 
-    class Student{
-        int [] rollno = new int [5];
-        String[] name = new String [5];
-        float[] marks = new float [5];
+    // we need a way to add values of the above
+    // properties object by object
+
+    // we need one word to access every object
+
+    void changeName(String name){
+        this.name = name;
     }
+
+    Student (Student other){
+        this.rollno = other.rollno;
+        this.name = other.name;
+        this.marks = other.marks;
+    }
+
+    Student(){
+        this.rollno = 4;
+        this.name = "Naman Sharma";
+        this.marks = 45.5f;
+    }
+
+    Student(int roll, String naam, float marksNo){
+        this.rollno = roll;
+        this.name = naam;
+        this.marks = marksNo;
+    }
+
+
+    
 }
