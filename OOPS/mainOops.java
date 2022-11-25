@@ -34,8 +34,20 @@ public class mainOops {
         // System.out.println(naman.marks);
 
 
-        Student random = new Student(naman);
-        System.out.println(random.name);
+        // Student random = new Student(naman);
+        // System.out.println(random.name);
+
+        Student anyone = new Student();
+        // System.out.println(anyone.name);
+
+
+        Student one = new Student();
+
+        Student two = one;
+
+        one.name = "Something Something";
+
+        System.out.println(two.name);
     }
 }
 
@@ -66,9 +78,9 @@ class Student{
     }
 
     Student(){
-        this.rollno = 4;
-        this.name = "Naman Sharma";
-        this.marks = 45.5f;
+        // this is how you call a constructor from another constructor
+        // internally: new Student(13,"default person",100.0f);
+        this(13,"default person",100.0f);
     }
 
     Student(int roll, String naam, float marksNo){

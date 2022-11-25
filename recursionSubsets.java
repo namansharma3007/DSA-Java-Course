@@ -12,7 +12,7 @@ public class recursionSubsets {
         // System.out.println(ans);
     //    subSequenceAscii("", "abc");
 
-       ArrayList<String> result = subSequenceAsciiRet("", "abc");
+       ArrayList<String> result = subSequenceArrayList("", "32568");
        System.out.println(result);
     }
 

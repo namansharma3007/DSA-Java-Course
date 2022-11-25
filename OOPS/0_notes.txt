@@ -1,2 +1,3 @@
 class:
     -> is names group of properties and functions
+    -> final: this keyword will prevent the original data to be modified
