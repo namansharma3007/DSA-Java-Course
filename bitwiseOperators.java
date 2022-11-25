@@ -26,6 +26,13 @@ class bitwiseOperators {
 
         return 0;
     }
+    private static int findSingleNo(int[] num) {
+        int no = 0;
+        for (int i = 0; i < num.length; i++) {
+            no+=num[i];
+        }
+        return no%3;
+    }
     public static void main(String[] args) {       
         // System.out.println(oddEven(45));
 
@@ -37,5 +44,8 @@ class bitwiseOperators {
         int no = 9;
         setIthBitTo1(1, no);
         // System.out.println(no);
+        int [] num = {1,1,1,2,3,3,3,4,4,4,5,5,5};
+        System.out.println(findSingleNo(num));
     }
+
 }
