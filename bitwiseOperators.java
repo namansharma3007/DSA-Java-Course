@@ -72,6 +72,37 @@ class bitwiseOperators {
         }
         return ans;
     }
+    private static int countSetBit(int n) {
+        System.out.println(Integer.toBinaryString(n)+'\n');
+
+        int count = 0;
+        // while (n > 0) {
+        //     count++;
+        //     n-=(n&(-n));
+        //     // System.out.println(Integer.toBinaryString(n));
+        // }
+
+        while (n > 0) {
+            count++;
+            n = n & (n-1);
+            // System.out.println(Integer.toBinaryString(n));
+        }
+        return count;
+    }
+
+    public static int xorRange(int index){
+            if(index%4 == 0) return index;
+            if(index%4 == 1) return 1;
+            if(index%4 == 2) return index+1;
+            if(index%4 == 3) return 0;
+
+            return -1;
+    }
+
+    public static int rangeXOR(int a, int b){
+
+        return xorRange(b)^xorRange(a-1);
+    }
     public static void main(String[] args) {       
         // System.out.println(oddEven(45));
 
@@ -95,10 +126,17 @@ class bitwiseOperators {
         // System.out.println(powerOfTwo(16));
 
         // System.out.println(aRaiseToPowerb(3,3));
+        // System.out.println(countSetBit(45));
+
+
+        // Q: Find XOR of no from 0-8?
+
+        // xorRange(8);
+
+        System.out.println(rangeXOR(3,9));
+        
+
 
     }
-
-
-
 
 }

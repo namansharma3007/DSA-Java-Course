@@ -7,6 +7,8 @@ public class quickSortAlgo {
         // quickSort(arr,0,arr.length-1);
         // System.out.println(Arrays.toString(arr));
 
+        // quickSort(nums,0,nums.length - 1);
+
         Arrays.sort(arr);
         System.out.println(Arrays.toString(arr));
 
