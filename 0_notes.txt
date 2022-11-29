@@ -83,3 +83,8 @@ h) Subsets:
 
 i) BackTracking:
     -> When a chopice can affect future answers use backtracking
+
+
+
+j) Linked list:
+    -> 

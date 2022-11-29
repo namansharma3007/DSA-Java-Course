@@ -1,6 +1,6 @@
+package OOPS;
 import java.util.Arrays;
 
-// package OOPS;
 // create own datatype using class
 
 public class mainOops {
