@@ -1,31 +1,30 @@
 package LinkedList;
 
-import java.net.Inet4Address;
-
 public class LL {
-    
+
     private Node head;
     private Node tail;
 
     private int size;
 
-    public LL(){
+    public LL() {
         this.size = 0;
     }
-    public void insertFirst(int val){
+
+    public void insertFirst(int val) {
         Node node = new Node(val);
         node.next = head;
         head = node;
 
-        if(tail == null){
+        if (tail == null) {
             tail = head;
         }
 
         size++;
     }
 
-    public void insertLast(int val){
-        if(tail == null){
+    public void insertLast(int val) {
+        if (tail == null) {
             insertFirst(val);
             return;
         }
@@ -35,12 +34,12 @@ public class LL {
         size++;
     }
 
-    public void insert(int val, int index){
-        if(index == 0){
+    public void insert(int val, int index) {
+        if (index == 0) {
             insertFirst(val);
             return;
         }
-        if(index == size){
+        if (index == size) {
             insertLast(val);
             return;
         }
@@ -55,10 +54,26 @@ public class LL {
         size++;
     }
 
-    public int deleteFirst(){
+    // insert using recursion
+    public void insertRec(int val, int index) {
+        head = insertRec(val, index, head);
+    }
+
+    private Node insertRec(int val, int index, Node node) {
+        if (index == 0) {
+            Node temp = new Node(val, node);
+            size++;
+            return temp;
+        }
+
+        node.next = insertRec(val, index-1, node.next);
+        return node;
+    }
+
+    public int deleteFirst() {
         int val = head.value;
         head = head.next;
-        if(head == null){
+        if (head == null) {
             tail = null;
         }
 
@@ -66,8 +81,8 @@ public class LL {
         return val;
     }
 
-    public int deleteLast(){
-        if(size <= 1){
+    public int deleteLast() {
+        if (size <= 1) {
             return deleteFirst();
         }
 
@@ -80,12 +95,12 @@ public class LL {
         return val;
     }
 
-    public int delete(int index){
-        if(index == 0){
-            return deleteFirst(); 
+    public int delete(int index) {
+        if (index == 0) {
+            return deleteFirst();
         }
 
-        if(index == size-1){
+        if (index == size - 1) {
             return deleteLast();
         }
 
@@ -97,11 +112,11 @@ public class LL {
         return val;
     }
 
-    public Node find(int val){
+    public Node find(int val) {
         Node node = head;
-        
+
         while (node != null) {
-            if(node.value == val){
+            if (node.value == val) {
                 return node;
             }
             node = node.next;
@@ -111,35 +126,35 @@ public class LL {
 
     }
 
-    public Node get(int index){
+    public Node get(int index) {
         Node node = head;
         for (int i = 0; i < index; i++) {
-            node = node.next;            
+            node = node.next;
         }
 
         return node;
 
     }
 
-    public void display(){
+    public void display() {
         Node temp = head;
 
-        while(temp != null){
-            System.out.print(temp.value+" -> ");
+        while (temp != null) {
+            System.out.print(temp.value + " -> ");
             temp = temp.next;
         }
         System.out.println("END");
     }
 
-    private class Node{
+    private class Node {
         private int value;
         private Node next;
 
-        public Node(int value){
+        public Node(int value) {
             this.value = value;
         }
 
-        public Node(int value, Node next){
+        public Node(int value, Node next) {
             this.value = value;
             this.next = next;
         }
