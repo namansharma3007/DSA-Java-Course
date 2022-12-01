@@ -87,4 +87,5 @@ i) BackTracking:
 
 
 j) Linked list:
-    -> 
+    -> Linked-list "CYCLE" try "FAST" and "SLOW" pointer method
+    -> Linked-list for finding any node try "FAST" and "SLOW" pointer method "Median"
