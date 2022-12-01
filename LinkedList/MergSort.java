@@ -12,7 +12,7 @@ public class MergSort {
         ListNode left = sortList(head);
         ListNode right = sortList(mid);
 
-        return merg(left, right);
+        return merge(left, right);
     }
 
     ListNode merge(ListNode list1, ListNode list2) {
