@@ -1,5 +1,6 @@
 package LinkedList;
 
+
 public class LL {
 
     private Node head;
@@ -216,7 +217,7 @@ public class LL {
         reverse(head);
     }
 
-    private void reverse(Node node) {
+    public void reverse(Node node) {
         if(node == tail){
             head = tail;
             return;
@@ -228,7 +229,7 @@ public class LL {
         tail.next = null;
     }
 
-    private void inplaceReversal(Node head){
+    public void inplaceReversal(Node head){
         if(size < 2){
             return;
         }
@@ -247,6 +248,99 @@ public class LL {
             }
         }
         head = prev;
+    }
+
+    public Node reverseBetween(Node head, int left, int right) {
+        if(left == right){
+            return head;
+        }
+        // skip the first left - 1 nodes
+        Node current = head;
+        Node prev = null;
+
+        for (int i = 0; current != null && i < left - 1; i++) {
+            prev = current;
+            current = current.next;
+        }
+
+        Node last = prev;
+        Node newEnd = current;
+        Node next = current.next;
+
+        // reverse between left and right
+        for (int i = 0; current != null && i < right - left + 1; i++) {
+            current.next = prev;
+            prev = current;
+            current = next;
+            if(next != null){
+                next = next.next;
+            }
+        }
+
+
+        if(last != null){
+            last.next = prev;
+        } else {
+            head = prev;
+        }
+
+        newEnd.next = current;
+
+        return head;
+
+    }
+    public boolean isPalindrome(Node head) {
+        if(head == null || head.next == null){
+            return true;
+        }
+
+        Node mid = middleNode(head);
+        Node headSecond = reverseList(mid);
+        Node rereverseHead = headSecond;
+
+        // compare both the halves
+        while(head != null && headSecond != null){
+            if(head.value != headSecond.value){
+                break;
+            }
+
+            head = head.next;
+            headSecond = headSecond.next;
+        }
+
+        reverseList(rereverseHead);
+
+        return head == null || headSecond == null;
+    }
+
+    public Node middleNode(Node head) {
+        Node s = head;
+        Node f = head;
+
+        while (f != null && f.next != null) {
+            s = s.next;
+            f = f.next.next;
+        }
+        return s;
+    }
+
+    public Node reverseList(Node head) {
+        if (head == null) {
+            return head;
+        }
+        Node prev = null;
+        Node present = head;
+        Node next = present.next;
+
+        while (present != null) {
+            present.next = prev;
+            prev = present;
+            present = next;
+            if (next != null) {
+                next = next.next;
+            }
+        }
+        return prev;
     }
 
     private class Node {
