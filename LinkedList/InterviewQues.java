@@ -1,5 +1,7 @@
 package LinkedList;
 
+import java.util.List;
+
 public class InterviewQues {
     public class ListNode {
         int val;
@@ -67,4 +69,162 @@ public class InterviewQues {
         }
         return s;
     }
+
+    public ListNode reverseBetween(ListNode head, int left, int right) {
+        if(left == right){
+            return head;
+        }
+        // skip the first left - 1 nodes
+        ListNode current = head;
+        ListNode prev = null;
+
+        for (int i = 0; current != null && i < left - 1; i++) {
+            prev = current;
+            current = current.next;
+        }
+
+        ListNode last = prev;
+        ListNode newEnd = current;
+        ListNode next = current.next;
+
+        // reverse between left and right
+        for (int i = 0; current != null && i < right - left + 1; i++) {
+            current.next = prev;
+            prev = current;
+            current = next;
+            if(next != null){
+                next = next.next;
+            }
+        }
+
+
+        if(last != null){
+            last.next = prev;
+        } else {
+            head = prev;
+        }
+
+        newEnd.next = current;
+
+        return head;
+
+    }
+
+    public ListNode reverseKGroup(ListNode head, int k) {
+        if(k <= 1 || head == null) {
+            return head;
+        }
+
+        ListNode current = head;
+        ListNode prev = null;
+
+        int length = getLength(head);
+		int count = length / k;
+
+        while(count > 0){    
+            ListNode last = prev;
+            ListNode newEnd = current;
+            ListNode next = current.next;
+    
+            // reverse between left and right
+            for (int i = 0; current != null && i < k; i++) {
+                current.next = prev;
+                prev = current;
+                current = next;
+                if(next != null){
+                    next = next.next;
+                }
+            }
+    
+    
+            if(last != null){
+                last.next = prev;
+            } else {
+                head = prev;
+            }
+    
+            newEnd.next = current;
+            if(current  == null){
+                break;
+            }
+            prev = newEnd;
+            count--;
+        }
+        return head;
+    }
+
+    public int getLength(ListNode head) {
+		ListNode node = head;
+		int length = 0;
+		while (node != null) {
+			length++;
+			node = node.next;
+		}
+		return length;
+	}
+
+    public ListNode reverseAlternateKGroup(ListNode head, int k){
+        if(k <= 1 || head == null) {
+            return head;
+        }
+
+        ListNode current = head;
+        ListNode prev = null;
+
+        int length = getLength(head);
+
+        while(current != null){    
+            ListNode last = prev;
+            ListNode newEnd = current;
+            ListNode next = current.next;
+    
+            // reverse between left and right
+            for (int i = 0; current != null && i < k; i++) {
+                current.next = prev;
+                prev = current;
+                current = next;
+                if(next != null){
+                    next = next.next;
+                }
+            }
+    
+    
+            if(last != null){
+                last.next = prev;
+            } else {
+                head = prev;
+            }
+    
+            newEnd.next = current;
+            // skip k nodes
+            for (int i = 0; i < k && current != null; i++) {
+                prev = current;
+                current = current.next;
+            }
+        }
+        return head;
+    }
+
+    public ListNode rotateRight(ListNode head, int k) {
+        if(head == null || head.next == null || k== 0) return head;
+
+        ListNode last = head;
+        int len = 1;
+        while(last.next != null){
+            last = last.next;
+            len++;
+        }
+        last.next = head;
+        int rotations = k%len;
+        int skip = len - rotations;
+        ListNode newLast = head;
+        for (int i = 0; i < skip-1; i++) {
+            newLast = newLast.next;
+        }
+        head = newLast.next;
+        newLast.next = null;
+
+        return head;
+    }
+
 }
