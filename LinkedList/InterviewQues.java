@@ -1,7 +1,5 @@
 package LinkedList;
 
-import java.util.List;
-
 public class InterviewQues {
     public class ListNode {
         int val;
