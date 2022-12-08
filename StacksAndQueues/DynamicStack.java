@@ -2,7 +2,7 @@ package StacksAndQueues;
 
 public class DynamicStack extends CustomStack {
     public DynamicStack(){
-        super(); // this willc call CustomStack();
+        super(); // this will call CustomStack();
     }
 
     
