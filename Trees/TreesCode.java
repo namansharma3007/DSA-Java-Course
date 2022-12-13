@@ -17,7 +17,7 @@ public class TreesCode {
 
     static class BinaryTree{
         static int index = -1;
-        Node buildTree(int []nodes){
+        public Node buildTree(int []nodes){
             index++;
             if(nodes[index] == -1){
                 return null;
@@ -96,6 +96,69 @@ public class TreesCode {
         return leftCount+rightCount+1;
         
     }
+
+    public static int sum(Node root){
+        if(root == null) return 0;
+
+        int leftSum = sum(root.left);
+        int rightSum = sum(root.right);
+
+        return leftSum+rightSum+root.data;
+    }
+
+    public static int height(Node root){
+        if(root == null) return 0;
+
+        int leftHeight = height(root.left);
+        int rightHeight = height(root.right);
+
+        int maxHeight = Math.max(leftHeight, rightHeight)+1;
+        return maxHeight;
+    }
+
+    // O(N^2)
+    public static int diameter(Node root){
+        if(root == null){
+            return 0;
+        }
+
+        int dia1 = diameter(root.left);
+        int dia2 = diameter(root.right);
+
+        int dia3 = height(root.left) + height(root.right) + 1;
+
+        return Math.max(dia3, Math.max(dia1,dia2));
+    }
+    static class TreeInfo{
+        int ht;
+        int diam;
+
+        TreeInfo(int ht, int diam){
+            this.ht = ht;
+            this.diam = diam;
+        }
+    }
+
+    public static TreeInfo diameter2(Node root){
+        if(root == null){
+            return new TreeInfo(0, 0);
+        }
+        TreeInfo left = diameter2(root.left);
+        TreeInfo right = diameter2(root.right);
+
+        int myHeight = Math.max(left.ht, right.ht) + 1;
+
+        int diam1 = left.diam;
+        int diam2 = right.diam;
+        int diam3 = left.ht + right.ht + 1;
+
+        int mydiam = Math.max(Math.max(diam1, diam2), diam3);
+
+        TreeInfo myInfo = new TreeInfo(myHeight, mydiam);
+
+        return myInfo;
+    }
+    
     
 
     public static void main(String[] args) {
@@ -107,6 +170,14 @@ public class TreesCode {
         // inOrder(root);
         // postOrder(root);
         // levelOrder(root);
-        System.out.println(count(root));
+        // System.out.println(count(root));
+        // System.out.println(sum(root));
+        // System.out.println(height(root));
+
+        // System.out.println(diameter(root));
+        // System.out.println(diameter2(root).diam);
+
+        
+
     }
 }
