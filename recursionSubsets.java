@@ -12,8 +12,8 @@ public class recursionSubsets {
         // System.out.println(ans);
     //    subSequenceAscii("", "abc");
 
-       ArrayList<String> result = subSequenceArrayList("", "32568");
-       System.out.println(result);
+       ArrayList<String> result = subSequenceArrayList("", "AAABBC");
+       System.out.println(result.size());
     }
 
     static void subSequence(String p, String up){

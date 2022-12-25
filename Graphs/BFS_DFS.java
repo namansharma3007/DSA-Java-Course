@@ -44,10 +44,41 @@ public class BFS_DFS {
         graph[5].add(new Edge(5, 6, 1));
     }
 
-    public static void bfs(ArrayList<Edge> [] graph){ // O(N) = O(V+E)
-        Queue<Integer> q = new LinkedList<>();
+
+    public static void bfs(ArrayList<Edge> [] graph){
         boolean [] visited = new boolean[graph.length];
 
+        for (int i = 0; i < graph.length; i++) {
+            if(!visited[i]){
+                bfsUtil(graph, visited);
+            }
+        }
+    }
+
+    public static void bfsUtil(ArrayList<Edge> [] graph, boolean [] visited){ 
+        Queue<Integer> q = new LinkedList<>();
+
+        q.add(0);
+
+        while(!q.isEmpty()){
+            int current = q.remove();
+
+            if(!visited[current]) { // visit current
+                System.out.print(current+" ");
+                visited[current] = true;
+                for (int i = 0; i < graph[current].size(); i++) {
+                    Edge e = graph[current].get(i);
+                    q.add(e.dest);
+                }
+            }
+        }
+    }
+
+
+    // this is main BFS function
+    public static void BFS(ArrayList<Edge> [] graph){ // O(N) = O(V+E)
+        Queue<Integer> q = new LinkedList<>();
+        boolean [] visited = new boolean[graph.length];
         // source = 0
         q.add(0);
 
@@ -65,7 +96,16 @@ public class BFS_DFS {
         }
     }
 
-    public static void dfs(ArrayList<Edge> [] graph, int current, boolean [] visited){
+    public static void dfs(ArrayList<Edge> [] graph){
+        boolean visited [] = new boolean[graph.length];
+
+        for (int i = 0; i < graph.length; i++) {
+            dfsUtil(graph, i, visited);
+        }
+    }
+
+
+    public static void dfsUtil(ArrayList<Edge> [] graph, int current, boolean [] visited){
         // O(V+E)
         // visit
         System.out.print(current + " ");
@@ -73,7 +113,20 @@ public class BFS_DFS {
         for (int i = 0; i < graph[current].size(); i++) {
             Edge e = graph[current].get(i);
             if(!visited[e.dest]){
-                dfs(graph, e.dest, visited);
+                DFS(graph, e.dest, visited);
+            }
+        }
+    }
+    // this is main DFS function
+    public static void DFS(ArrayList<Edge> [] graph, int current, boolean [] visited){
+        // O(V+E)
+        // visit
+        System.out.print(current + " ");
+        visited[current] = true;
+        for (int i = 0; i < graph[current].size(); i++) {
+            Edge e = graph[current].get(i);
+            if(!visited[e.dest]){
+                DFS(graph, e.dest, visited);
             }
         }
     }
@@ -93,7 +146,64 @@ public class BFS_DFS {
         return false;
     }
 
+    //https://practice.geeksforgeeks.org/problems/detect-cycle-in-an-undirected-graph/1
+    public boolean isCycle(int V, ArrayList<ArrayList<Integer>> adj) {
+        boolean [] vis = new boolean[V];
+        
+        for(int i = 0; i < V; i++){
+            if(!vis[i]){
+                if(dfs(i, adj, vis, -1)){
+                    return true;
+                }
+            }
+        }
+    return false;
+    }
+    public boolean dfs(int v, ArrayList<ArrayList<Integer>> adj, boolean [] vis, int parent){
+        vis[v] = true;
+        
+        for(Integer neighbour: adj.get(v)){
+            if(!vis[neighbour]){
+                if(dfs(neighbour, adj, vis, v)){
+                    return true;
+                } 
+            }else if(parent != neighbour){
+                    return true;
+                }
+        }
+        return false;
+    }
 
+
+    // https://practice.geeksforgeeks.org/problems/detect-cycle-in-a-directed-graph/1
+     // Function to detect cycle in a directed graph.
+     public boolean isCyclic(int V, ArrayList<ArrayList<Integer>> adj) {
+        boolean vis[] = new boolean[V];
+        boolean recS[] = new boolean[V];
+        
+        for(int i=0;i<V;i++){
+            if(!vis[i]){
+                if(dfs(i, adj, vis, recS)) return true;
+            }
+        }
+        return false;
+    }
+    
+    public boolean dfs(int v, ArrayList<ArrayList<Integer>> adj, boolean [] vis, boolean [] recS){
+        vis[v] = true;
+        recS[v] = true;
+        
+        for(Integer neighbour: adj.get(v)){
+            if(!vis[neighbour]){
+                if(dfs(neighbour, adj, vis, recS))
+                    return true;
+            } else if(recS[neighbour]){
+                return true;
+            }
+        }
+        recS[v] = false;
+        return false;
+    }
     public static void main(String[] args) {
         int V = 7;
 
