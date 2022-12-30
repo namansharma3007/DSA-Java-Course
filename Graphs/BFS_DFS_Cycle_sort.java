@@ -4,7 +4,7 @@ import java.util.*;
 
 import javax.swing.text.html.BlockView;
 
-public class BFS_DFS {
+public class BFS_DFS_Cycle_sort {
     static class Edge{
         int src;
         int dest;
@@ -204,6 +204,41 @@ public class BFS_DFS {
         recS[v] = false;
         return false;
     }
+
+    // topologocal sort
+    // https://practice.geeksforgeeks.org/problems/topological-sort/1
+    static int[] topoSort(int V, ArrayList<ArrayList<Integer>> adj) 
+    {
+        boolean vis[] = new boolean[V];
+        Stack<Integer> stack = new Stack<>();
+        
+        for(int i=0;i<V;i++){
+            if(!vis[i]){
+                dfs(adj, i, stack, vis);
+            }
+        }
+        int ans[] = new int[V];
+        int i=0;
+        while(!stack.isEmpty()){
+            ans[i++] = stack.pop();
+        }
+        
+        return ans;
+        
+    }
+    
+    static void dfs(ArrayList<ArrayList<Integer>> adj, int v, Stack<Integer> stack, boolean [] vis){
+        vis[v] = true;
+        for(int neighbour: adj.get(v)){
+            if(!vis[neighbour]){
+                dfs(adj, neighbour, stack, vis);
+            }
+        }
+        stack.push(v);
+    }
+
+    
+
     public static void main(String[] args) {
         int V = 7;
 
