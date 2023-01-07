@@ -237,7 +237,52 @@ public class BFS_DFS_Cycle_sort {
         stack.push(v);
     }
 
+    // kahn's Algorithm
+    static int[] kahnsAlgo(int V, ArrayList<ArrayList<Integer>> adj) 
+    {
+        int inDeg [] = new int[V];
+        for (ArrayList<Integer> list : adj) {
+            for(Integer e: list){
+                inDeg[e]++;
+            }
+        }
+
+        ArrayList<Integer> ansList = new ArrayList<>();
+
+        bfs(adj, V, 0, ansList, inDeg);
+
+        int ans [] = new int[V];
+        int i=0;
+        for (int e : ans) {
+            ans[i++] = e;
+        }
+
+        return ans;
+    }
     
+
+    private static void bfs(ArrayList<ArrayList<Integer>> adj, int V, int v, ArrayList<Integer> ansList,
+            int[] inDeg) {
+            
+        Queue<Integer> q = new LinkedList<>();
+        for (int i = 0; i < V; i++) {
+            if(inDeg[i] == 0){
+                q.add(i);
+            }
+        }
+
+        while(!q.isEmpty()){
+            int cur = q.poll();
+            ansList.add(cur);
+
+            for (int neighbour: adj.get(cur)) {
+                if(--inDeg[neighbour] == 0){
+                    q.add(neighbour);
+                }
+            }
+        }
+    }
+
 
     public static void main(String[] args) {
         int V = 7;
