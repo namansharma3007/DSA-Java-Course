@@ -92,4 +92,7 @@ public class Mathematics {
 
         return root;
     }
+
+    // Newton Rapson Method
+    // root = (X + (n/x))/2  : x = guess we are making
 }
