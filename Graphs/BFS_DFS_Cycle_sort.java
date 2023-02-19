@@ -290,7 +290,7 @@ public class BFS_DFS_Cycle_sort {
         ArrayList<Edge> graph [] = new ArrayList[V];
         createGraph(graph);
         // bfs(graph);
-        // dfs(graph, 0, new boolean[V]);
-        System.out.println(hasPath(graph, 3, 5, new boolean[V]));
+        DFS(graph, 0, new boolean[V]);
+        // System.out.println(hasPath(graph, 3, 5, new boolean[V]));
     }
 }
