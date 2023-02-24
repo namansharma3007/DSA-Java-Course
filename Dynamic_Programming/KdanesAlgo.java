@@ -2,7 +2,7 @@ package Dynamic_Programming;
 
 public class KdanesAlgo {
     public static void main(String[] args) {
-        int [] arr = {-3, -2, -3};
+        int [] arr = {-3, -2, -1};
         System.out.println(kdanesAgo(arr));
     }
     public static int kdanesAgo(int[] nums) {

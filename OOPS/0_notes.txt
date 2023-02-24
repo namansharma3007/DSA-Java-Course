@@ -1,3 +1,8 @@
 class:
     -> is names group of properties and functions
     -> final: this keyword will prevent the original data to be modified
+
+static:
+    -> object that is common to everyone
+    -> they are not dependent on object i.e. they can be accessed even without declaring any object. We can directly access it by using class name
+    -> static variable is accessed by class name and not by using "this" [For example refer: /OOPS/staticExample/Human.java]
