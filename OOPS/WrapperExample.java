@@ -11,7 +11,7 @@ public class WrapperExample {
         Integer b = 85;
 
         swap(a, b);
-        System.out.println(a+" "+b);
+        // System.out.println(a+" "+b);
 
         // final int  
 
@@ -21,7 +21,8 @@ public class WrapperExample {
         // when a non primitive in final, you can reassign it.
         // naman = new A("new Object"); // will throw an error
 
-        A obj;
+        A obj = new A("namanmnm");
+        System.out.println(obj);
 
         for (int i = 0; i < 1000000000; i++) {
             obj = new A("random name");
@@ -46,9 +47,9 @@ class A{
         this.name = name;
     }
 
-    @Override
-    protected void finalize() throws Throwable {
-        // super.finalize();
-        System.out.println("Object is destroyed");
-    }
+    // @Override
+    // protected void finalize() throws Throwable {
+    //     // super.finalize();
+    //     System.out.println("Object is destroyed");
+    // }
 }
