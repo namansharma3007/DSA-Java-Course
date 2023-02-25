@@ -92,3 +92,5 @@ j) Linked list:
 
 k) HashMap:
     -> It is internally implemented as an array of Linked List
+
+l) ".": it binds instance variable with reference methods e.g. System.out.println()
