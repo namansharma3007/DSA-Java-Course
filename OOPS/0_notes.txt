@@ -11,3 +11,4 @@ static:
     -> something that is non-static belongs to an object / instance
     -> we can have static member inside a non-static one
     -> we cannot use this keyword inside static method: same as we cannot access non-static from static methods
+    -> static methods are resolved during compile time not run-time
