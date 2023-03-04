@@ -12,3 +12,12 @@ static:
     -> we can have static member inside a non-static one
     -> we cannot use this keyword inside static method: same as we cannot access non-static from static methods
     -> static methods are resolved during compile time not run-time
+
+
+inheritance:
+    -> properties passed on by parents and you can use those properties
+    -> a class which is able to use properties and stuff of other class
+    -> child class is able to use properties of base class
+    -> this is done by using extends keykword
+    -> reference variable will decide which all type of variables we access
+    -> if reference variable is of parent class and reference object is of child class, then all the variables will be initialized but we won't be able to access variables of child class. We only would be able to acess variables of reference type
