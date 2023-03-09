@@ -11,7 +11,6 @@ public class mountainArray {
                 end = mid;
             else if (arr[mid] < arr[mid+1])
                 start = mid + 1;
-            
         }
     
         return end;
