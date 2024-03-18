@@ -1,3 +1,5 @@
+package TrieDSA;
+
 import java.util.*;
 
 class Node{
