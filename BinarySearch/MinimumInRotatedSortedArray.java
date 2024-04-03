@@ -5,7 +5,13 @@ public class MinimumInRotatedSortedArray {
         int start = 0, end = n-1;
         int min = Integer.MAX_VALUE;
         while(start <= end){
-            int mid = start + (end + start)/2;
+            int mid = start + (end - start)/2;
+
+            // this section is just an optimization code the code will work even without it
+            if(arr[start] <= arr[end]){
+                min = Math.min(min, arr[start]);
+                break;
+            }
 
             if(arr[mid] >= arr[start]){
                 min = Math.min(min, arr[start]);
