@@ -5,7 +5,7 @@ import java.util.Arrays;
 
 public class PeakElement {
 
-    // unique elements in the array and multiple peeks available
+    // unique elements in the array and multiple peeks available as well as single peek
     public static int findPeakElement(ArrayList<Integer> arr) {
         int n = arr.size();
         if(n == 1) return 0;
