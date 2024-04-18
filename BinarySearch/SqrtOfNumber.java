@@ -18,7 +18,7 @@ public class SqrtOfNumber {
             }
         }
         // return ans;
-        // high is returned because opposite polatiry id returned. See the if statement the else statement value is returned
+        // high is returned because opposite polatiry is returned. See the if statement the else statement value is returned
         return high;
     }
 }

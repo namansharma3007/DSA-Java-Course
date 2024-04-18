@@ -62,7 +62,7 @@ public class mergeSort {
             return;
         }
 
-        int mid =(start + end)/2;
+        int mid = (start + end)/2;
         mergSortInPlace(arr, start, mid);
         mergSortInPlace(arr, mid, end);
 
