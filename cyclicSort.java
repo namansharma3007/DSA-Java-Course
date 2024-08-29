@@ -20,7 +20,6 @@ public class cyclicSort {
                 i++;
             }
             // just add a search statement according to questions need: normally a for loop will be used
-
         }
     }
     static void swap(int [] arr, int first, int second){
