@@ -6,37 +6,6 @@ public class Solution {
     public static final FastWriter fw = new FastWriter();
     final static int mod = (int) 1e9 + 7;
 
-    public static long power(long base, long exp) {
-        long result = 1;
-        base = base % mod;
-        while (exp > 0) {
-            if ((exp & 1) == 1) {
-                result = (result * base) % mod;
-            }
-            base = (base * base) % mod;
-            exp >>= 1;
-        }
-        return result;
-    }
-
-    public static int gcd(int a, int b) {
-        if (b == 0) return a;
-        return gcd(b, a % b);
-    }
-
-    public static long gcd(long a, long b) {
-        if (b == 0) return a;
-        return gcd(b, a % b);
-    }
-
-    public static long lcm(int a, int b) {
-        return (a / gcd(a, b)) * (long) b;
-    }
-
-    public static long lcm(long a, long b) {
-        return (a / gcd(a, b)) * b;
-    }
-
     // Fast input class for efficient reading of input
     static class FastReader {
         BufferedReader br;
@@ -105,6 +74,25 @@ public class Solution {
             bw.close();
         }
     }
+
+    public static void dbg(Object... args) throws IOException {
+        fw.print("Debug: ");
+        for (Object arg : args) {
+            if (arg instanceof int[]) {
+                fw.print(Arrays.toString((int[]) arg) + " ");
+            } else if (arg instanceof long[]) {
+                fw.print(Arrays.toString((long[]) arg) + " ");
+            } else if (arg instanceof double[]) {
+                fw.print(Arrays.toString((double[]) arg) + " ");
+            } else if (arg instanceof Object[]) {
+                fw.print(Arrays.deepToString((Object[]) arg) + " ");
+            } else {
+                fw.print(arg + " ");
+            }
+        }
+        fw.print("\n");
+    }
+    
 
     public static void main(String[] args) throws IOException {
         // Number of test cases
