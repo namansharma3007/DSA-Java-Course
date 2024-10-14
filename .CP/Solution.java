@@ -4,6 +4,7 @@ import java.util.*;
 public class Solution {
     public static final FastReader fr = new FastReader();
     public static final FastWriter fw = new FastWriter();
+    final static int mod = (int) 1e9 + 7;
 
     // Fast input class for efficient reading of input
     static class FastReader {
