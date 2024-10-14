@@ -93,6 +93,37 @@ public class Solution {
         fw.print("\n");
     }
     
+    public static int gcd(int a, int b) {
+        if (b == 0) return a;
+        return gcd(b, a % b);
+    }
+    
+    public static long gcd(long a, long b) {
+        if (b == 0) return a;
+        return gcd(b, a % b);
+    }
+    
+    public static long lcm(int a, int b) {
+        return (a / gcd(a, b)) * (long) b;
+    }
+    
+    public static long lcm(long a, long b) {
+        return (a / gcd(a, b)) * b;
+    }
+    
+    public static long power(long base, long exp) {
+        long result = 1;
+        base = base % mod;
+        while (exp > 0) {
+            if ((exp & 1) == 1) {
+                result = (result * base) % mod;
+            }
+            base = (base * base) % mod;
+            exp >>= 1;
+        }
+        return result;
+    }
+    
 
     public static void main(String[] args) throws IOException {
         // Number of test cases
