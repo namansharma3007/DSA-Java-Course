@@ -19,6 +19,24 @@ public class Solution {
         return result;
     }
 
+    public static int gcd(int a, int b) {
+        if (b == 0) return a;
+        return gcd(b, a % b);
+    }
+
+    public static long gcd(long a, long b) {
+        if (b == 0) return a;
+        return gcd(b, a % b);
+    }
+
+    public static long lcm(int a, int b) {
+        return (a / gcd(a, b)) * (long) b;
+    }
+
+    public static long lcm(long a, long b) {
+        return (a / gcd(a, b)) * b;
+    }
+
     // Fast input class for efficient reading of input
     static class FastReader {
         BufferedReader br;
@@ -90,7 +108,8 @@ public class Solution {
 
     public static void main(String[] args) throws IOException {
         // Number of test cases
-        int t = fr.nextInt();
+        int t = 1;
+        t = fr.nextInt();
         for (int i = 1; i <= t; i++) {
             solve(i);
         }
