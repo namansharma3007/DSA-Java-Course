@@ -2,13 +2,21 @@ import java.io.*;
 import java.util.*;
 
 public class MainInputOuputExpected {
-    // Change this boolean to true for file I/O, false for console I/O
-    private static final boolean USE_FILE_IO = true; 
+    // Flag to determine whether to use file I/O or console I/O
+    private static final boolean USE_FILE_IO = filesExist(); 
 
     public static final FastReader fr = USE_FILE_IO ? new FastReader("input.txt") : new FastReader();
     public static final FastWriter fw = USE_FILE_IO ? new FastWriter("output.txt") : new FastWriter();
 
     final static int mod = (int) 1e9 + 7;
+
+    // Method to check if input, output, and expected files exist
+    private static boolean filesExist() {
+        File inputFile = new File("input.txt");
+        File outputFile = new File("output.txt");
+        File expectedFile = new File("expected.txt");
+        return inputFile.exists() && outputFile.exists() && expectedFile.exists();
+    }
 
     // Fast input class for efficient reading of input
     static class FastReader {
@@ -100,6 +108,36 @@ public class MainInputOuputExpected {
         }
     }
 
+    private static void checkOutput() throws IOException {
+        BufferedReader outputReader = new BufferedReader(new FileReader("output.txt"));
+        BufferedReader expectedReader = new BufferedReader(new FileReader("expected.txt"));
+
+        String outputLine, expectedLine;
+
+        int lineNum = 1;
+        boolean allPassed = true;
+
+        while ((outputLine = outputReader.readLine()) != null && (expectedLine = expectedReader.readLine()) != null) {
+            if (!outputLine.trim().equals(expectedLine.trim())) {
+                System.out.println("Test case failed at line: " + lineNum);
+                System.out.println("Expected: " + expectedLine);
+                System.out.println("Found: " + outputLine);
+                System.out.println("----------------------------------------------------------------------------------->");
+                allPassed = false;
+            }
+            lineNum++;
+        }
+
+        if (allPassed && (outputReader.readLine() == null) && (expectedReader.readLine() == null)) {
+            System.out.println("All test cases passed!");
+        } else if (allPassed) {
+            System.out.println("Mismatch in the number of lines in output and expected result.");
+        }
+
+        outputReader.close();
+        expectedReader.close();
+    }
+
     public static void main(String[] args) throws IOException {
         // Number of test cases
         int t = 1;
@@ -119,35 +157,5 @@ public class MainInputOuputExpected {
 
     private static void solve(int test_case) throws IOException {
         // Write your logic here
-    }
-
-    private static void checkOutput() throws IOException {
-        BufferedReader outputReader = new BufferedReader(new FileReader("output.txt"));
-        BufferedReader expectedReader = new BufferedReader(new FileReader("expected.txt"));
-        
-        String outputLine, expectedLine;
-        
-        int lineNum = 1;
-        
-        boolean allPassed = true;
-
-        while ((outputLine = outputReader.readLine()) != null && (expectedLine = expectedReader.readLine()) != null) {
-            if (!outputLine.trim().equals(expectedLine.trim())) {
-                System.out.println("Test case -> " + lineNum);
-                System.out.println("Expected: " + expectedLine);
-                System.out.println("Found: " + outputLine);
-                allPassed = false;
-            }
-            lineNum++;
-        }
-
-        if (allPassed && (outputReader.readLine() == null) && (expectedReader.readLine() == null)) {
-            System.out.println("All test cases passed!");
-        } else if (allPassed) {
-            System.out.println("Mismatch in the number of lines in output and expected result.");
-        }
-
-        outputReader.close();
-        expectedReader.close();
     }
 }
