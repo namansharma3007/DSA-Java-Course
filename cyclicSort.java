@@ -11,12 +11,11 @@ public class cyclicSort {
     }
 
     static void sort(int [] arr){
-        int i = 0;
-        while(i < arr.length){
+        for (int i = 0; i < arr.length;) {
             int correct = arr[i] - 1;
             if(arr[i] != arr[correct]){
                 swap(arr,i,correct);
-            } else{
+            } else {
                 i++;
             }
             // just add a search statement according to questions need: normally a for loop will be used
